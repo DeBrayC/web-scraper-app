@@ -1,0 +1,6 @@
+CREATE DATABASE database;
+CREATE TABLE movies (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR,
+  url VARCHAR
+)

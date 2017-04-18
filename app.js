@@ -21,7 +21,7 @@ if(!error){
     let data = $(this)
 
     title = data.children().last().text()
-    url = data.children().first().attr('href')
+    url = data.children().first().href()
 
     json.title = title
     json.release = release

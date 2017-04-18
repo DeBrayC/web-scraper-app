@@ -1,12 +1,25 @@
 {
-  "name" : "black-negus-whistle-tip-scraper",
-  "version" : "0.0.1",
-  "description" : "Web scraper app",
-  "main" : "server.js",
-  "author" : "DeBray & Briy",
-  "dependencies" : {
-    "express" : "latest",
-    "request" : "latest",
-    "cheerio" : "latest"
-  }
+  "name": "black-negus-whistle-tip-scraper",
+  "version": "0.0.1",
+  "description": "Web scraper app",
+  "main": "app.js",
+  "author": "DeBray & Briy",
+  "dependencies": {
+    "express": "latest",
+    "request": "latest",
+    "cheerio": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeBrayC/web-scraper-app.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeBrayC/web-scraper-app/issues"
+  },
+  "homepage": "https://github.com/DeBrayC/web-scraper-app#readme"
 }
