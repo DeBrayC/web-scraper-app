@@ -5,6 +5,7 @@
   "main": "app.js",
   "author": "DeBray & Briy",
   "dependencies": {
+    "ejs": "latest",
     "express": "latest",
     "request": "latest",
     "cheerio": "latest"

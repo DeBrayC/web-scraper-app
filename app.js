@@ -3,47 +3,36 @@ const fs = require('fs')
 const request = require('request')
 const cheerio = require('cheerio')
 const app = express()
+const util = require('util')
+const path = require('path')
 
-app.get('/scrape', (req, res) => {
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs')
+app.use(express.static(__dirname + '/public'))
 
-url = 'http://afdah.to/category/hd/'
 
-request(url, (error, response, html) => {
-
-if(!error){
-  let $ = cheerio.load(html)
-
-  let title, url
-  let json = { title : "", url : "" }
-
-  $('.entry-title').filter( () => {
-
-    let data = $(this)
-
-    title = data.children().last().text()
-    url = data.children().first().href()
-
-    json.title = title
-    json.release = release
-
-  })
-
+const scrape = (url) => {
 }
+app.get('/', (req, res) => {
+  const url = 'http://afdah.to/category/hd/'
+  request(url, (error, response, html) => {
 
-fs.writeFile('output.json', JSON.stringify(json, null, 2), (err) => {
+    if(!error){
+      let $ = cheerio.load(html.toString())
+      let movies = []
 
-console.log('Yo! The Mothership is Scrapin... - Check the output.json');
-
+      $('h3.entry-title a').each( (index, element) => {
+        movies.push({ title : element.children[0].data, url : element.attribs.href })
+      })
+      res.render('index', {movies})
+    }
+  })
 })
 
-res.send('Check your console!')
-
-  })
+app.get('/scrape', (req, res) => {
 
 })
 
 app.listen('8081')
-
-console.log('Port 8081, where ALL the Magic Happens...')
 
 module.exports = app

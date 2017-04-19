@@ -1,5 +1,11 @@
-CREATE DATABASE database;
+DROP DATABASE moviesnmusic IF EXISTS;
+CREATE DATABASE moviesnmusic;
 CREATE TABLE movies (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR,
+  url VARCHAR
+);
+CREATE TABLE music (
   id SERIAL PRIMARY KEY,
   title VARCHAR,
   url VARCHAR

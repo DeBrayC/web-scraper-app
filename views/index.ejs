@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8">
+    <title>DeBray and Briy's Web Scraper App</title>
+  </head>
+  <body>
+    <header>
+      <h1>Black Negus Whistle Tip Scraper</h1>
+    </header>
+    <ul>
+    <% for(let i=0; i<movies.length; i++) { %>
+        <li>
+            <a href='<%= movies[i].url %>'>
+    <p><%= movies[i].title %></p>
+  </a>
+</li>
+<% } %>
+</ul>
+  </body>
+</html>
