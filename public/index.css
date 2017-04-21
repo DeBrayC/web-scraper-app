@@ -1,10 +1,34 @@
+#navbar {
+  text-align: center;
+  background-color: darkred;
+}
+#navbar a {
+  color: white;
+  margin: 1%;
+  font-size: 18px;
+}
 h1 {
   text-align: center;
 }
-table {
-  background-color: darkred;
+h2 {
+  text-align: center;
 }
-city-scraper {
-  display: flex;
-  justify-content: flex-end;
+.wrapper {
+  width: 50%;
+}
+#movie-div {
+  align: center;
+  width: 50%;
+  background-color: black;
+  color: white;
+}
+#footer {
+  background-color: darkred;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  color: white;
 }

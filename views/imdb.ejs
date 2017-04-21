@@ -8,21 +8,21 @@
   <body>
     <header>
       <h1>Black Negus Whistle Tip Scraper</h1>
-        <h2>HD Movies</h2>
+        <h2>Top IMDB Movies</h2>
     </header>
     <div id="navbar">
       <a href="/">HOME</a>
       <a href="/cinema">Cinema Movies</a>
       <a href="/imdb">Top IMdB Movies</a>
     </div>
+    <header>
     <div id="wrapper" style="text-align: center">
-
       <div id="movies-div">
       <ul>
-      <% for(let i=0; i<hdmovies.length; i++) { %>
+      <% for(let i=0; i<imdbmovies.length; i++) { %>
           <li>
-              <a href='<%= hdmovies[i].url %>'>
-      <p><%= hdmovies[i].title %></p>
+              <a href='<%= imdbmovies[i].url %>'>
+      <p><%= imdbmovies[i].title %></p>
     </a>
   </li>
   <% } %>

@@ -11,26 +11,50 @@ app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 
 
-const scrape = (url) => {
-}
 app.get('/', (req, res) => {
   const url = 'http://afdah.to/category/hd/'
   request(url, (error, response, html) => {
 
     if(!error){
       let $ = cheerio.load(html.toString())
-      let movies = []
+      let hdmovies = []
 
       $('h3.entry-title a').each( (index, element) => {
-        movies.push({ title : element.children[0].data, url : element.attribs.href })
+        hdmovies.push({ title : element.children[0].data, url : element.attribs.href })
       })
-      res.render('index', {movies})
+      res.render('index', {hdmovies})
     }
   })
 })
+app.get('/imdb', (req, res) => {
+  const url = 'http://afdah.to/top-imdb/'
+  request(url, (error, response, html) => {
 
-app.get('/scrape', (req, res) => {
+    if(!error){
+      let $ = cheerio.load(html.toString())
+      let imdbmovies = []
 
+      $('h3.entry-title a').each( (index, element) => {
+        imdbmovies.push({ title : element.children[0].data, url : element.attribs.href })
+      })
+      res.render('imdb', {imdbmovies})
+    }
+  })
+})
+app.get('/cinema', (req, res) => {
+  const url = 'http://afdah.to/category/cinema/'
+  request(url, (error, response, html) => {
+
+    if(!error){
+      let $ = cheerio.load(html.toString())
+      let cinemamovies = []
+
+      $('h3.entry-title a').each( (index, element) => {
+        cinemamovies.push({ title : element.children[0].data, url : element.attribs.href })
+      })
+      res.render('cinema', {cinemamovies})
+    }
+  })
 })
 
 app.listen('8081')
