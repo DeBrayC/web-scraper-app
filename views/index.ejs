@@ -9,14 +9,29 @@
     <header>
       <h1>Black Negus Whistle Tip Scraper</h1>
     </header>
-    <ul>
-    <% for(let i=0; i<movies.length; i++) { %>
-        <li>
-            <a href='<%= movies[i].url %>'>
-    <p><%= movies[i].title %></p>
-  </a>
-</li>
-<% } %>
-</ul>
+    <div id=hdmovies-list>
+      <h2>HD Movies List</h2>
+      <ul>
+        <% for(let i=0; i<hdmovies.length; i++) { %>
+          <li>
+            <a href='<%= hdmovies[i].url %>'>
+              <p><%= hdmovies[i].title %></p>
+            </a>
+          </li>
+          <% } %>
+        </ul>
+    </div>
+    <div id=cinemamovies-list>
+      <h2>Cinema Movies List</h2>
+      <ul>
+  <% for(let i=0; i<cinemamovies.length; i++) { %>
+    <li>
+      <a href='<%= cinemamovies[i].url %>'>
+        <p><%= cinemamovies[i].title %></p>
+      </a>
+    </li>
+    <% } %>
+  </ul>
+    </div>
   </body>
 </html>

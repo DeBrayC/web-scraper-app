@@ -10,7 +10,9 @@
     "request": "latest",
     "cheerio": "latest"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1"
+  },
   "scripts": {
     "test": "npm test"
   },
